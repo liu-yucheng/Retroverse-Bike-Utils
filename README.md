@@ -21,6 +21,11 @@
 - Performs a batch of `gen_bike_config_info.py` operations.
 - `python batch_gen_bike_config_info.py [--help] <bike-name-1> [bike-name-2] ...[bike-names]`
 
+## `batch_gen_retroverse_bike_config_info.py`
+
+- Performs a batch of `gen_bike_config_info.py` operations with the `Retroverse-Bike--` bike name prefix.
+- `python batch_gen_retroverse_bike_config_info.py [--help] <bike-name-1> [bike-name-2] ...[bike-names]`
+
 # Copyright
 
 ```
