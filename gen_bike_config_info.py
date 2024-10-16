@@ -9,6 +9,7 @@ Generates configuration information for the specified bike name.
 
 from argparse import ArgumentParser as _ArgumentParser
 import os as _os
+import re as _re
 import hashlib as _hashlib_
 import json as _json_
 import varname as _varname
@@ -48,7 +49,7 @@ def _create_context():
         timestamp = _datetime_utils.find_now_custom_date_time_string()
 
     if config_file_name is None:
-        config_file_name = f"bike-config--{timestamp}.json"
+        config_file_name = f"bike-config_{timestamp}.json"
         config_file_name = _os_path.join(data_folder_name, config_file_name)
     # end if
 
@@ -106,8 +107,8 @@ def _generate_config_info():
     config_dict[_nameof(secret)] = secret
 
     ssid = _find_hash_hex_str(config_info, 4)
-    bike_name_prefix = bike_name.split("--")[0]
-    ssid = f"{bike_name_prefix}--{ssid}"
+    bike_name_prefix = _re.split("_+", bike_name)[0]
+    ssid = f"{bike_name_prefix}_{ssid}"
     config_info += f"{_nameof(ssid)}: {ssid}\n"
     config_dict[_nameof(ssid)] = ssid
 
