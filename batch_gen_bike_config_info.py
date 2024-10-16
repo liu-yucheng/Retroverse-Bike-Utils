@@ -48,7 +48,7 @@ def _create_context():
         timestamp = _datetime_utils.find_now_custom_date_time_string()
 
     if config_batch_file_name is None:
-        config_batch_file_name = f"bike-config-batch--{timestamp}.json"
+        config_batch_file_name = f"bike-config-batch_{timestamp}.json"
         config_batch_file_name = _os_path.join(data_folder_name, config_batch_file_name)
     # end if
 
@@ -100,7 +100,7 @@ def _perform_batch_operations():
         print(f"begin Operation {index + 1} / {len(bike_names)}")
         _gen_bike_config_info.data_folder_name = data_folder_name
         _gen_bike_config_info.timestamp = timestamp
-        _gen_bike_config_info.config_file_name = f"bike-config--{timestamp}--{index + 1}.json"
+        _gen_bike_config_info.config_file_name = f"bike-config_{timestamp}_{index + 1}.json"
 
         _gen_bike_config_info.config_file_name = _os_path.join(
             data_folder_name,
