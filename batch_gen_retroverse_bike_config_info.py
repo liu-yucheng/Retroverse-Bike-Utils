@@ -1,6 +1,6 @@
 """
 Batch generate bike configuration information.
-Performs a "batch_gen_bike_config_info.py" operation with the "Retroverse-Bike--" prefix for each bike name.
+Performs a "batch_gen_bike_config_info.py" operation with the "Retroverse-Bike_" prefix for each bike name.
 """
 
 # Copyright (C) 2024 Yucheng Liu. Under the GNU AGPL 3.0 License.
@@ -46,7 +46,7 @@ def _create_context():
         timestamp = _datetime_utils.find_now_custom_date_time_string()
 
     if config_batch_file_name is None:
-        config_batch_file_name = f"retroverse-bike-config-batch--{timestamp}.json"
+        config_batch_file_name = f"retroverse-bike-config-batch_{timestamp}.json"
         config_batch_file_name = _os_path.join(data_folder_name, config_batch_file_name)
     # end if
 
@@ -61,7 +61,7 @@ def _parse_arguments():
         usage=f"python {_script_basename} [--help] <bike-name-1> [bike-name-2] ...[bike-names]",
 
         description="Performs a \"batch_gen_bike_config_info.py\" operation with"
-            + " the \"Retroverse-Bike--\" prefix for each bike name.",
+            + " the \"Retroverse-Bike_\" prefix for each bike name.",
 
         epilog="Copyright (C) 2024 Yucheng Liu. Under the GNU AGPL 3.0 License."
     )
@@ -92,7 +92,7 @@ def _perform_operation():
     retroverse_bike_names = []
 
     for bike_name in bike_names:
-        retroverse_bike_names.append(f"Retroverse-Bike--{bike_name}")
+        retroverse_bike_names.append(f"Retroverse-Bike_{bike_name}")
 
     print("begin Operation")
     _batch_gen_bike_config_info.data_folder_name = data_folder_name
