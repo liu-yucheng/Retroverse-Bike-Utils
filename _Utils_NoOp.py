@@ -6,9 +6,9 @@
 # GNU AGPL 3.0 License available at: https://www.gnu.org/licenses/agpl-3.0.txt
 
 
-class NoOpClass:
+class Class_NoOp:
     """
-    Defines no operation.
+    A class that defines no operation.
     """
     def __add__(self, other: any) -> any:
         return self
@@ -62,7 +62,7 @@ class NoOpClass:
         return []
 
 
-no_op_obj = NoOpClass()
+Obj_NoOp = Class_NoOp()
 """
-No operation object.
+A no operation object.
 """
