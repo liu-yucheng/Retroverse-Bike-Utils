@@ -10,21 +10,22 @@
 - Run `pip install -r ./requirements.txt` to install the python dependencies.
 
 # Usage
-## `gen_bike_config_info.py`
 
-- Generates configuration information for the specified bike name.
-- Uses "block chain" technologies to ensure information confidentiality.
-- `python gen_bike_config_info.py [--help] <bike-name>`
+## [`Bike_Configs_Generate.py`](./Bike_Configs_Generate.py)
 
-## `batch_gen_bike_config_info.py`
+- Generates configurations for a bike name.
+- Uses cryptographic technologies to ensure information confidentiality.
+- `python Bike_Configs_Generate.py [--help] <Bike_Name>`
 
-- Performs a batch of `gen_bike_config_info.py` operations.
-- `python batch_gen_bike_config_info.py [--help] <bike-name-1> [bike-name-2] ...[bike-names]`
+## [`Batch_Bike_Configs_Generate.py`](./Batch_Bike_Configs_Generate.py)
 
-## `batch_gen_retroverse_bike_config_info.py`
+- Performs a batch of "Bike_Configs_Generate.py" operations.
+- `python Batch_Bike_Configs_Generate.py [--help] <Bike_Name1> [Bike_Name2] ...[Bike_Names]`
 
-- Performs a `batch_gen_bike_config_info.py` operation with the `Retroverse-Bike_` prefix for each bike name.
-- `python batch_gen_retroverse_bike_config_info.py [--help] <bike-name-1> [bike-name-2] ...[bike-names]`
+## [`Batch_RetroverseBike_Configs_Generate.py`](./Batch_RetroverseBike_Configs_Generate.py)
+
+- Performs a "Batch_Bike_Configs_Generate.py" operation with a "Retroverse-Bike_" prefix for each bike name.
+- `python Batch_RetroverseBike_Configs_Generate.py [--help] <Bike_Name1> [Bike_Name2] ...[Bike_Names]`
 
 # Copyright
 
