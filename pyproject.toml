@@ -1,0 +1,11 @@
+[project]
+name = "retroverse-bike-utils"
+version = "0.6.0"
+description = "Retroverse Bike Python script utilities."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.3.5",
+    "python-dateutil>=2.9.0.post0",
+    "varname>=0.15.0",
+]
