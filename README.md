@@ -11,12 +11,12 @@
 
 # Usage
 
-## [`./retroverse_bike_configs__batch_generate.py`](./retroverse_bike_configs__batch_generate.py)
+## [./retroverse_bike_configs__batch_generate.py](./retroverse_bike_configs__batch_generate.py)
 
 - Performs a "./bike_configs__batch_generate.py" operation with a "Retroverse-Bike_" prefix for each bike name.
 - `python ./retroverse_bike_configs__batch_generate.py [--help] <bike_name_1> [bike_name_2] ...[bike_names]`
 
-## [`./bike_configs__batch_generate.py`](./bike_configs__batch_generate.py)
+## [./bike_configs__batch_generate.py](./bike_configs__batch_generate.py)
 
 - Performs a batch of "./bike_configs__generate.py" operations.
 - `python ./bike_configs__batch_generate.py [--help] <bike_name_1> [bike_name_2] ...[bike_names]`
