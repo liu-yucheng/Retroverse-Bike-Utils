@@ -2,11 +2,11 @@
 (Private) no operation utilities.
 """
 
-# Copyright (C) 2024 Yucheng Liu. Under the GNU AGPL 3.0 License.
-# GNU AGPL 3.0 License available at: https://www.gnu.org/licenses/agpl-3.0.txt
+# Copyright (C) 2024-2025 Yucheng Liu. Under the GNU AGPL 3.0 License.
+# GNU AGPL 3.0 License available at: https://www.gnu.org/licenses/agpl-3.0.txt .
 
 
-class Class_NoOp:
+class no_op__class:
     """
     A class that defines no operation.
     """
@@ -62,7 +62,7 @@ class Class_NoOp:
         return []
 
 
-Obj_NoOp = Class_NoOp()
+no_op__object = no_op__class()
 """
 A no operation object.
 """
