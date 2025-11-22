@@ -22,38 +22,22 @@ _parser = None
 _args = None
 
 name_no_ext__this_file: str
-"""
-The name of this file without extension.
-"""
+"""The name of this file without extension."""
 name_no_ext__this_file, _ = _os_path.splitext(_basename__this_file)
 folder_name__data: str = None
-"""
-The folder name of script data.
-"""
+"""The folder name of script data."""
 timestamp: str = None
-"""
-A timestamp for the operation.
-"""
+"""A timestamp for the operation."""
 file_name__configs: str = None
-"""
-The file name of the bike configs.
-"""
+"""The file name of the bike configs."""
 args__overridden: bool = False
-"""
-Whether the arguments are overridden.
-"""
+"""Whether the arguments are overridden."""
 bike_name: str = None
-"""
-The bike name.
-"""
+"""The bike name."""
 str__configs: str = None
-"""
-The bike configs in string format.
-"""
+"""The bike configs in string format."""
 dict__configs: dict = None
-"""
-The bike configs in dict format.
-"""
+"""The bike configs in dict format."""
 
 
 def _context__create():

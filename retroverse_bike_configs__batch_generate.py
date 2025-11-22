@@ -20,34 +20,20 @@ _parser = None
 _args = None
 
 name_no_ext__this_file: str
-"""
-The name of this file without extension.
-"""
+"""The name of this file without extension."""
 name_no_ext__this_file, _ = _os_path.splitext(_basename__this_file)
 folder_name__data: str = None
-"""
-The folder name of script data.
-"""
+"""The folder name of script data."""
 timestamp: str = None
-"""
-The timestamp for batch operations.
-"""
+"""The timestamp for batch operations."""
 file_name__batch_configs: str = None
-"""
-The file name of the batch bike configs.
-"""
+"""The file name of the batch bike configs."""
 args_overridden: bool = False
-"""
-Whether the arguments are overridden.
-"""
+"""Whether the arguments are overridden."""
 bike_names: list[str] = None
-"""
-A list of bike names.
-"""
+"""A list of bike names."""
 retroverse_bike_names: list[str] = None
-"""
-A list of retroverse bike names.
-"""
+"""A list of retroverse bike names."""
 
 
 def _context__create():
