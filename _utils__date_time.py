@@ -36,37 +36,21 @@ def mod_custom(numer, denom, signed):
 
 
 class TimeDelta_Custom:
-    """
-    A custom timedelta structure.
-    """
+    """A custom timedelta structure."""
     US_PER_MS = 1000
-    """
-    Unit converstion multiplier - ms to us.
-    """
+    """Unit converstion multiplier - ms to us."""
     MS_PER_S = 1000
-    """
-    Unit converstion multiplier - s to ms.
-    """
+    """Unit converstion multiplier - s to ms."""
     S_PER_MIN = 60
-    """
-    Unit converstion multiplier - min to s.
-    """
+    """Unit converstion multiplier - min to s."""
     MIN_PER_H = 60
-    """
-    Unit converstion multiplier - ms to h.
-    """
+    """Unit converstion multiplier - ms to h."""
     H_PER_DAY = 24
-    """
-    Unit converstion multiplier - h to day.
-    """
+    """Unit converstion multiplier - h to day."""
     DAYS_PER_WEEK = 7
-    """
-    Unit converstion multiplier - day to week.
-    """
+    """Unit converstion multiplier - day to week."""
     WEEKS_PER_YEAR = 52
-    """
-    Unit converstion multiplier - week to year.
-    """
+    """Unit converstion multiplier - week to year."""
 
     def __init__(self, time_delta: _timedelta) -> None:
         """
@@ -94,41 +78,23 @@ class TimeDelta_Custom:
         self._weeks_total = int(self._days_total / self.DAYS_PER_WEEK)
         self._years_total = int(self._weeks_total / self.WEEKS_PER_YEAR)
         self.is_positive: bool = self._days_total >= 0 and self._s_in_day >= 0
-        """
-        Whether the time delta is positive.
-        """
+        """Whether the time delta is positive."""
         self.us_in_s: int = self._us_in_s
-        """
-        Microseconds in second.
-        """
+        """Microseconds in second."""
         self.ms_in_s: int = self._ms_in_s
-        """
-        Milliseconds in second.
-        """
+        """Milliseconds in second."""
         self.s_in_min: int = mod_custom(self._s_in_day, self.S_PER_MIN, True)
-        """
-        Seconds in minute.
-        """
+        """Seconds in minute."""
         self.min_in_h: int = mod_custom(self._min_in_day, self.MIN_PER_H, True)
-        """
-        Minutes in hour.
-        """
+        """Minutes in hour."""
         self.h_in_day: int = mod_custom(self._h_in_day, self.H_PER_DAY, True)
-        """
-        Hours in day.
-        """
+        """Hours in day."""
         self.days_in_week: int = mod_custom(self._days_total, self.DAYS_PER_WEEK, True)
-        """
-        Days in week.
-        """
+        """Days in week."""
         self.weeks_in_year: int = mod_custom(self._weeks_total, self.WEEKS_PER_YEAR, True)
-        """
-        Weeks in year.
-        """
+        """Weeks in year."""
         self.years_total: int = self._years_total
-        """
-        Total years.
-        """
+        """Total years."""
     # end def
 # end class
 
@@ -154,12 +120,12 @@ def custom_date_time_str__find_for(date_time: _datetime_, utc_offset: _timedelta
 
     if utc_offset__custom.is_positive:
         result += \
-            f"__utc_{abs(utc_offset__custom.h_in_day):02d}" \
+            f"_utc_{abs(utc_offset__custom.h_in_day):02d}" \
             + f"{abs(utc_offset__custom.min_in_h):02d}"
         # end statement
     else:
         result += \
-            f"__utc_-{abs(utc_offset__custom.h_in_day):02d}" \
+            f"_utc_-{abs(utc_offset__custom.h_in_day):02d}" \
             + f"{abs(utc_offset__custom.min_in_h):02d}"
         # end statement
     # end if
@@ -180,3 +146,4 @@ def date_time_custom_str__find_for_now() -> str:
     now__utc_offset = now__utc.astimezone().tzinfo.utcoffset(now__utc)
     result = custom_date_time_str__find_for(now, now__utc_offset)
     return result
+# end def
