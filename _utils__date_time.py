@@ -99,7 +99,7 @@ class TimeDelta_Custom:
 # end class
 
 
-def custom_date_time_str__find_for(date_time: _datetime_, utc_offset: _timedelta) -> str:
+def date_time_str_custom__find_for(date_time: _datetime_, utc_offset: _timedelta) -> str:
     """
     Finds a custom date time string for the given date time information.
 
@@ -134,7 +134,7 @@ def custom_date_time_str__find_for(date_time: _datetime_, utc_offset: _timedelta
 # end def
 
 
-def date_time_custom_str__find_for_now() -> str:
+def date_time_str_custom__find_for_now() -> str:
     """
     Finds a custom date time string for now.
 
@@ -142,8 +142,8 @@ def date_time_custom_str__find_for_now() -> str:
         result: A custom date time string.
     """
     now = _datetime_.now()
-    now__utc = _datetime_.now(_datetime.timezone.utc)
-    now__utc_offset = now__utc.astimezone().tzinfo.utcoffset(now__utc)
-    result = custom_date_time_str__find_for(now, now__utc_offset)
+    utc = _datetime_.now(_datetime.timezone.utc)
+    utc_offset = utc.astimezone().tzinfo.utcoffset(utc)
+    result = date_time_str_custom__find_for(now, utc_offset)
     return result
 # end def
