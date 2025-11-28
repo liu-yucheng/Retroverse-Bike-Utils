@@ -15,13 +15,13 @@ import _utils__date_time
 
 _os_path = _os.path
 _nameof = _varname.core.nameof
-_basename__this_file = _os_path.basename(__file__)
+_basename = _os_path.basename(__file__)
 _parser = None
 _args = None
 
-name_no_ext__this_file: str
+name_no_ext: str
 """The name of this file without extension."""
-name_no_ext__this_file, _ = _os_path.splitext(_basename__this_file)
+name_no_ext, _ = _os_path.splitext(_basename)
 folder_name__data: str = None
 """The folder name of script data."""
 timestamp: str = None
@@ -43,13 +43,13 @@ def _context__create():
 
     if folder_name__data is None:
         folder_name__data = _os_path.dirname(__file__)
-        folder_name__data = _os_path.join(folder_name__data, f".{name_no_ext__this_file}__data")
+        folder_name__data = _os_path.join(folder_name__data, f".{name_no_ext}__data")
     # end if
 
     _os.makedirs(folder_name__data, exist_ok=True)
 
     if timestamp is None:
-        timestamp = _utils__date_time.date_time_custom_str__find_for_now()
+        timestamp = _utils__date_time.date_time_str_custom__find_for_now()
     # end if
 
     if file_name__batch_configs is None:
@@ -65,10 +65,10 @@ def _args__parse():
     global bike_names
 
     _parser = _ArgumentParser(
-        prog=_basename__this_file,
+        prog=_basename,
 
         usage=\
-            f"python {_basename__this_file} [--help] <bike_name_1>" \
+            f"python {_basename} [--help] <bike_name_1>" \
             + f" [bike_name_2] ...[{_nameof(bike_names)}]"
         ,
 
@@ -148,14 +148,14 @@ def main():
     """
     Starts the main procedure.
     """
-    print(f"begin {_basename__this_file}")
+    print(f"begin {_basename}")
     _context__create()
     _args__parse()
     _op__perform()
     _list__print(_nameof(bike_names), bike_names)
     _list__print(_nameof(retroverse_bike_names), retroverse_bike_names)
     print(f"{file_name__batch_configs = :s}")
-    print(f"end {_basename__this_file}")
+    print(f"end {_basename}")
 # end def
 
 
