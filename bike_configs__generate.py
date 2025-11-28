@@ -17,13 +17,13 @@ import _utils__date_time
 
 _os_path = _os.path
 _nameof = _varname.core.nameof
-_basename__this_file = _os_path.basename(__file__)
+_basename = _os_path.basename(__file__)
 _parser = None
 _args = None
 
-name_no_ext__this_file: str
+name_no_ext: str
 """The name of this file without extension."""
-name_no_ext__this_file, _ = _os_path.splitext(_basename__this_file)
+name_no_ext, _ = _os_path.splitext(_basename)
 folder_name__data: str = None
 """The folder name of script data."""
 timestamp: str = None
@@ -47,13 +47,13 @@ def _context__create():
 
     if folder_name__data is None:
         folder_name__data = _os_path.dirname(__file__)
-        folder_name__data = _os_path.join(folder_name__data, f".{name_no_ext__this_file}__data")
+        folder_name__data = _os_path.join(folder_name__data, f".{name_no_ext}__data")
     # end if
 
     _os.makedirs(folder_name__data, exist_ok=True)
 
     if timestamp is None:
-        timestamp = _utils__date_time.date_time_custom_str__find_for_now()
+        timestamp = _utils__date_time.date_time_str_custom__find_for_now()
     # end if
 
     if file_name__configs is None:
@@ -69,8 +69,8 @@ def _args__parse():
     global bike_name
 
     _parser = _ArgumentParser(
-        prog=_basename__this_file,
-        usage=f"python {_basename__this_file} [--help] <{_nameof(bike_name)}>",
+        prog=_basename,
+        usage=f"python {_basename} [--help] <{_nameof(bike_name)}>",
         description="Generates configurations for a bike name.",
         epilog="Copyright (C) 2024-2025 Yucheng Liu. Under the GNU AGPL 3.0 License."
     )
@@ -155,7 +155,7 @@ def main():
     """
     Starts the main procedure.
     """
-    print(f"begin {_basename__this_file}")
+    print(f"begin {_basename}")
     _context__create()
     _args__parse()
     _configs__generate()
@@ -167,8 +167,10 @@ def main():
         + f"{file_name__configs = :s}"
     )
 
-    print(f"end {_basename__this_file}")
+    print(f"end {_basename}")
+# end def
 
 
 if __name__ == "__main__":
     main()
+# end if
